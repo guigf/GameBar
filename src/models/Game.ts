@@ -1,4 +1,5 @@
 import { Jogador } from "./Jogador";
+import { Bar } from "./Bar";
 var _ = require('lodash');
 
 export class Game {
