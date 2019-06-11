@@ -11,10 +11,14 @@
 //   console.log("servidor rodando na porta 8000");
 // });
 
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require('express');
+const routes = require('./routes/routes.ts');
 
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use('/api', routes);
 
 app.listen(port, () => {
   console.log('Servidor rodando na porta ' + port);

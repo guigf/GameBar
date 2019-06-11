@@ -1,8 +1,8 @@
-'use strict';
+const express = require("express");
+const controller = require("../controller/JogoController.ts");
+const router = express.Router();
 
-module.exports = function(app: any) {
-  var jogo = require('../controller/JogoController.ts');
+router.get("/listarJogos", controller.list_all_games);
+router.get("/encontrarJogo", controller.find_game);
 
-  app.route('api/findGames')
-    .get(jogo.list_all_games);
-};
+module.exports = router;
